@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let oddel of oddeli">
+      {{ oddel.oddel_id }} - {{ oddel.oddel_naziv }}
+    </li>
+</ul>
+<form>
+    <div class="form-group">
+        <label>Dodadi nov oddel</label>
+        <input type="text" class="form-control" required [(ngModel)]="model.oddel_naziv" name="naziv">
+    </div>
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+</form>
