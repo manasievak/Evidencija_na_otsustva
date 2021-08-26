@@ -1,0 +1,50 @@
+<ul>
+    <li *ngFor="let oddel of oddeli">
+      {{ oddel.oddel_id }} - {{ oddel.oddel_naziv }}
+    </li>
+  </ul>
+
+  <form>
+    <div class="form-group">
+      <label>Ime</label>
+      <input type="text" class="form-control" required [(ngModel)]="model.v_ime" name="ime">
+    </div>
+    <div class="form-group">
+      <label>Prezime</label>
+      <input type="text" class="form-control"  [(ngModel)]="model.v_prezime" name="ime">
+    </div>
+    <div class="form-group">
+        <label>Mesto</label>
+        <input type="text" class="form-control"  [(ngModel)]="model.v_mesto" name="ime">
+      </div>
+      <div class="form-group">
+        <label>Telefon</label>
+        <input type="text" class="form-control"  [(ngModel)]="model.v_telefon" name="ime">
+      </div>
+      <div class="form-group">
+        <label>EMBG</label>
+        <input type="text" class="form-control"  [(ngModel)]="model.v_embg" name="ime">
+      </div>
+      <div class="form-group">
+        <label>Odmor</label>
+        <input type="text" class="form-control"  [(ngModel)]="model.v_odmor" name="ime">
+      </div>
+
+
+
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input"  [(ngModel)]="model.v_aktiven" name="ime">
+      <label class="form-check-label" for="exampleCheck1">Aktiven</label>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Oddel</label>
+        <select [(ngModel)]="selectedOddel.oddel_id" class="form-control" id="exampleFormControlSelect1" name="oddel">
+          <option *ngFor="let oddel of oddeli" [value]="oddel.oddel_id">
+            {{oddel.oddel_naziv}}
+          </option>
+        </select>
+      </div>
+
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+  </form>
