@@ -1,16 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { ListVraboteniComponent } from './list-vraboteni/list-vraboteni.component';
+import { MenuComponent } from './menu/menu.component';
+import { AddVrabotenComponent } from './add-vraboten/add-vraboten.component';
+import { FormsModule } from '@angular/forms';
+import { AddOddelComponent } from './add-oddel/add-oddel.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListVraboteniComponent,
+    MenuComponent,
+    AddVrabotenComponent,
+    AddOddelComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
