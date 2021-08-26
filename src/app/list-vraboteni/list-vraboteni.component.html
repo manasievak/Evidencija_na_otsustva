@@ -1,0 +1,29 @@
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Ime</th>
+          <th scope="col">Prezime</th>
+          <th scope="col">Mesto</th>
+          <th scope="col">Telefon</th>
+          <th scope="col">EMBG</th>
+          <th scope="col">Odmor</th>
+          <th scope="col">Aktiven</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vraboten of vraboteni">
+            <th scope="row">{{vraboten.v_id}}</th>
+            <td>{{vraboten.v_ime}}</td>
+            <td>{{vraboten.v_prezime}}</td>
+            <td>{{vraboten.v_mesto}}</td>
+            <td>{{vraboten.v_telefon}}</td>
+            <td>{{vraboten.v_embg}}</td>
+            <td>{{vraboten.v_odmor}}</td>
+            <td>{{vraboten.v_aktiven}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<button type="button" (click)="add()" class="btn btn-primary btn-lg btn-block">Внеси нов вработен</button>
