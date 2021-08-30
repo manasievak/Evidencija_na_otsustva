@@ -1,12 +1,21 @@
-<ul>
-    <li *ngFor="let oddel of oddeli">
-      {{ oddel.oddel_id }} - {{ oddel.oddel_naziv }}
-    </li>
-</ul>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <div class="w3-container">
+        <ul class="w3-ul w3-border">
+          <li><h2>Оддели</h2></li>
+          <li *ngFor="let oddel of oddeli" class="list-group-item list-group-item-action">
+            {{ oddel.oddel_naziv }}
+        </li>
+        </ul>
+      </div>
+
+<br><br><br>
+<div style="padding-left: 20px;">
 <form>
     <div class="form-group">
-        <label>Dodadi nov oddel</label>
+        <label><h2>Додади нов оддел</h2></label>
         <input type="text" class="form-control" required [(ngModel)]="model.oddel_naziv" name="naziv">
     </div>
-    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+    <button style="margin-top: 10px;" type="submit" (click)="onSubmit()" class="btn btn-primary">Внеси</button>
 </form>
+</div>

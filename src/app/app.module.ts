@@ -11,6 +11,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AddVrabotenComponent } from './add-vraboten/add-vraboten.component';
 import { FormsModule } from '@angular/forms';
 import { AddOddelComponent } from './add-oddel/add-oddel.component';
+import { ListOtsustvaComponent } from './list-otsustva/list-otsustva.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AddOddelComponent } from './add-oddel/add-oddel.component';
     MenuComponent,
     AddVrabotenComponent,
     AddOddelComponent,
+    ListOtsustvaComponent,
   ],
   imports: [
     BrowserModule,

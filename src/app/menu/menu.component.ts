@@ -21,5 +21,8 @@ export class MenuComponent implements OnInit {
   goToOddel() {
     this.router.navigate(['addOddel']); 
   };
+  goToOtsustva() {
+    this.router.navigate(['listOtsustva']); 
+  };
 
 }

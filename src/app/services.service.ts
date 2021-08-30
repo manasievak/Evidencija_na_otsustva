@@ -4,6 +4,8 @@ import { HttpHeaders } from '@angular/common/http';
 import { Firmi } from './firmi/firmi';
 import { Vraboteni } from './vraboteni/vraboteni';
 import { Oddeli } from './oddeli/oddeli';
+import { Vidovi } from './vidovi/vidovi';
+import { Otsustva } from './otsustva/otsustva';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -29,6 +31,14 @@ export class ServicesService {
 
   getOddeli(firma: Firmi) {
     return this.http.get<Oddeli[]>('http://localhost/getOddeli.php?id=' + firma.f_id, httpOptions)
+  }
+
+  getVidovi() {
+    return this.http.get<Vidovi[]>('http://localhost/getVidovi.php', httpOptions)
+  }
+
+  getOtsustva() {
+    return this.http.get<Otsustva[]>('http://localhost/getOtsustva.php')
   }
 
   addVraboten(vraboten: Vraboteni, firma: Firmi, oddel: Oddeli) {
