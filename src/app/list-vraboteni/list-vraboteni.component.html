@@ -1,8 +1,10 @@
-<a class="btn btn-outline- primary" routerLink="/menu">Back</a>
+<div style="padding-left: 20px;">
+<br>
+<a class="btn btn-outline-primary" routerLink="/menu">Back</a>
+<br><br>
 <table class="table">
     <thead>
         <tr>
-          <th scope="col">id</th>
           <th scope="col">Ime</th>
           <th scope="col">Prezime</th>
           <th scope="col">Mesto</th>
@@ -14,7 +16,6 @@
       </thead>
       <tbody>
         <tr *ngFor="let vraboten of vraboteni">
-            <th scope="row">{{vraboten.v_id}}</th>
             <td>{{vraboten.v_ime}}</td>
             <td>{{vraboten.v_prezime}}</td>
             <td>{{vraboten.v_mesto}}</td>
@@ -28,3 +29,4 @@
 
 
 <button type="button" (click)="add()" class="btn btn-primary btn-lg btn-block">Внеси нов вработен</button>
+</div>

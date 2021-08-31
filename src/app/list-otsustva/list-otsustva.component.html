@@ -1,8 +1,26 @@
-<div class="w3-container">
-  <ul class="w3-ul w3-border">
-    <h2>Видови Оддели</h2>
-    <li *ngFor="let vid of vidovi" class="list-group-item list-group-item-action">
-      {{ vid.vid_otsustvo }}
-  </li>
-  </ul>
+<div style="padding-left: 20px;">
+<br><a class="btn btn-outline-primary" routerLink="/menu">Back</a><br><br>
+
+<h2>Отсуства  </h2>
+
+<table class="table">
+  <thead>
+      <tr>
+        <th scope="col">Датум</th>
+        <th scope="col">Часови</th>
+        <th scope="col">Опис</th>
+        <th scope="col">v_id</th>
+        <th scope="col">vid_id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let otsustvo of otsustva">
+          <td>{{otsustvo.o_datum}}</td>
+          <td>{{otsustvo.o_casovi}}</td>
+          <td>{{otsustvo.o_opis}}</td>
+          <td>{{otsustvo.v_id}}</td> 
+          <td>{{otsustvo.vid_id}}</td> <!-- ngModel ???? get v_id(v_ime,v_prezime) from Vraboteni, get vid_id(vid)otsustvo) from Vidovi -->
+      </tr>
+  </tbody>
+</table>
 </div>

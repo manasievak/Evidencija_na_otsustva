@@ -4,6 +4,7 @@ import { Firmi } from '../firmi/firmi';
 import { Otsustva } from '../otsustva/otsustva';
 import { ServicesService } from '../services.service';
 import { Vidovi } from '../vidovi/vidovi';
+import { Vraboteni } from '../vraboteni/vraboteni';
 
 @Component({
   selector: 'app-list-otsustva',
@@ -15,15 +16,18 @@ export class ListOtsustvaComponent implements OnInit {
   otsustva!: Otsustva[];
   // firma!: Firmi;
   vidovi!: Vidovi[];
+  vraboteni!: Vraboteni[];
+  modelVraboteni!: Vraboteni;
 
   constructor(private router: Router, private _services: ServicesService) { }
 
   ngOnInit(): void {
     // this.firma = new Firmi(1);
-    this._services.getVidovi()
-    .subscribe((data: Vidovi[]) => {
-      this.vidovi=data;
-      console.log(this.vidovi ) 
+    this.modelVraboteni = new Vraboteni();
+    this._services.getOtsustva()
+    .subscribe((data: Otsustva[]) => {
+      this.otsustva=data;
+      console.log(this.otsustva ) 
     })
   }
 
