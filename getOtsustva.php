@@ -3,11 +3,11 @@
 require 'connect.php';
   
 $otsustva=[];
-$sql = "SELECT * FROM otsustva";
+$sql = "SELECT * FROM otsustva as o JOIN vraboteni as v ON v.v_id=o.v_id";
 
-if($result = mysqli_query($db_conn,$sql)) {
+if($result = pg_query($db_conn,$sql)) {
 $cr=0;
-while($row=mysqli_fetch_assoc($result)) {
+while($row=pg_fetch_assoc($result)) {
 	$otsustva[$cr]['o_id'] = $row['o_id'];
 	$otsustva[$cr]['o_datum'] = $row['o_datum'];
 	$otsustva[$cr]['o_casovi'] = $row['o_casovi'];

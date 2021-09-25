@@ -5,9 +5,9 @@ require 'connect.php';
 $firmi=[];
 $sql = "SELECT * FROM firmi";
 
-if($result = mysqli_query($db_conn,$sql)) {
+if($result = pg_query($db_conn,$sql)) {
 $cr=0;
-while($row=mysqli_fetch_assoc($result)) {
+while($row=pg_fetch_assoc($result)) {
 	$firmi[$cr]['f_id'] = $row['f_id'];
 	$firmi[$cr]['f_ime'] = $row['f_ime'];
 	$firmi[$cr]['f_grad'] = $row['f_grad'];
@@ -21,7 +21,7 @@ while($row=mysqli_fetch_assoc($result)) {
 	$cr++;
 }
 
-//print_r($posts);
+//print_r($firmi);
 echo json_encode($firmi);
 }
 else{http_response_code(404);}

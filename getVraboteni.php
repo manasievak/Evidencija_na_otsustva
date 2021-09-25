@@ -4,11 +4,11 @@ require 'connect.php';
   
 $vraboteni=[];
 $id = $_GET['id'];
-$sql = "SELECT * FROM vraboteni WHERE `f_id` = '{$id}'";
-
-if($result = mysqli_query($db_conn,$sql)) {
+//$sql = "SELECT * FROM vraboteni WHERE `f_id` = '{$id}'"; //'{$id}'
+$sql = "SELECT * FROM vraboteni WHERE f_id = $id";
+if($result = pg_query($db_conn,$sql)) {
 $cr=0;
-while($row=mysqli_fetch_assoc($result)) {
+while($row=pg_fetch_assoc($result)) {
 	$vraboteni[$cr]['v_id'] = $row['v_id'];
 	$vraboteni[$cr]['v_ime'] = $row['v_ime'];
 	$vraboteni[$cr]['v_prezime'] = $row['v_prezime'];
