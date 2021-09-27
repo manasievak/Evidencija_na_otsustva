@@ -1,5 +1,5 @@
 <div style="padding-left: 20px;">
-<br><a class="btn btn-outline-primary" routerLink="/menu">Back</a><br><br>
+<br><a class="btn btn-outline-primary" routerLink="/menu">Назад</a><br><br>
 
 <h2>Отсуства  </h2>
 
@@ -9,8 +9,8 @@
         <th scope="col">Датум</th>
         <th scope="col">Часови</th>
         <th scope="col">Опис</th>
-        <th scope="col">v_id</th>
-        <th scope="col">vid_id</th>
+        <th scope="col">Вработен</th>
+        <th scope="col">Вид отсуство</th>
       </tr>
     </thead>
     <tbody>
@@ -18,9 +18,10 @@
           <td>{{otsustvo.o_datum}}</td>
           <td>{{otsustvo.o_casovi}}</td>
           <td>{{otsustvo.o_opis}}</td>
-          <td>{{otsustvo.v_id}}</td> 
-          <td>{{otsustvo.vid_id}}</td> <!-- ngModel ???? get v_id(v_ime,v_prezime) from Vraboteni, get vid_id(vid)otsustvo) from Vidovi -->
+          <td>{{otsustvo.v_ime}}</td> 
+          <td>{{otsustvo.vid_otsustvo}}</td> <!-- ngModel ???? get v_id(v_ime,v_prezime) from Vraboteni, get vid_id(vid)otsustvo) from Vidovi -->
       </tr>
   </tbody>
 </table>
+<button type="button" (click)="add()" class="btn btn-primary btn-lg btn-block">Внеси ново отсуство</button>
 </div>

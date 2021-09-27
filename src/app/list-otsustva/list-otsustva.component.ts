@@ -17,18 +17,22 @@ export class ListOtsustvaComponent implements OnInit {
   // firma!: Firmi;
   vidovi!: Vidovi[];
   vraboteni!: Vraboteni[];
-  modelVraboteni!: Vraboteni;
+  // modelVraboteni!: Vraboteni;
 
   constructor(private router: Router, private _services: ServicesService) { }
 
   ngOnInit(): void {
     // this.firma = new Firmi(1);
-    this.modelVraboteni = new Vraboteni();
+    // this.modelVraboteni = new Vraboteni();
     this._services.getOtsustva()
     .subscribe((data: Otsustva[]) => {
       this.otsustva=data;
       console.log(this.otsustva ) 
     })
+  }
+  add() {
+    // this.id = post.id!;
+    this.router.navigate(['addOtsustvo']);
   }
 
 }

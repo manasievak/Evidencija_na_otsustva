@@ -12,6 +12,7 @@ import { AddVrabotenComponent } from './add-vraboten/add-vraboten.component';
 import { FormsModule } from '@angular/forms';
 import { AddOddelComponent } from './add-oddel/add-oddel.component';
 import { ListOtsustvaComponent } from './list-otsustva/list-otsustva.component';
+import { AddOtsustvoComponent } from './add-otsustvo/add-otsustvo.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ListOtsustvaComponent } from './list-otsustva/list-otsustva.component';
     AddVrabotenComponent,
     AddOddelComponent,
     ListOtsustvaComponent,
+    AddOtsustvoComponent,
   ],
   imports: [
     BrowserModule,

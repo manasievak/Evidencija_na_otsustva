@@ -1,0 +1,39 @@
+<div style="padding-left: 20px;">
+    <br><a class="btn btn-outline-primary" routerLink="/menu">Назад</a><br><br>
+  <div style="padding-left: 20px; margin-top: 20px;">
+    <form>
+      <h2 style="padding-bottom: 13px;">Внеси отсуство</h2>
+      <div class="form-group">
+        <label>Датум</label>
+        <input type="date" class="form-control" required [(ngModel)]="model.o_datum" name="ime">
+      </div>
+      <div class="form-group">
+        <label>Часови</label>
+        <input type="text" class="form-control"  [(ngModel)]="model.o_casovi" name="ime">
+      </div>
+      <div class="form-group">
+          <label>Опис</label>
+          <input type="text" class="form-control"  [(ngModel)]="model.o_opis" name="ime">
+        </div>
+  
+      <div class="form-group">
+          <label for="exampleFormControlSelect1">Избери вработен</label>
+          <select [(ngModel)]="selectedVraboten.v_id" class="form-select" id="exampleFormControlSelect1" name="vraboten">
+            <option *ngFor="let vraboten of vraboteni" [value]="vraboten.v_id">
+              {{vraboten.v_ime}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Избери вид отсуство</label>
+            <select [(ngModel)]="selectedVid.vid_id" class="form-select" id="exampleFormControlSelect1" name="vid">
+              <option *ngFor="let vid of vidovi" [value]="vid.vid_id">
+                {{vid.vid_otsustvo}}
+              </option>
+            </select>
+          </div>
+  
+      <button type="submit" (click)="onSubmit()" class="btn btn-primary">Внеси</button>
+    </form>
+    </div>
